@@ -1,0 +1,98 @@
+<div class="wrapper">
+
+  
+  <div class="gallery-slider">
+  {% for block in section.blocks %}
+      <div class="single-item-content">
+        <img src="{{ block.settings.image | img_url:'master' }}">
+
+      </div>
+    {% endfor %}
+    </div>
+
+  
+</div>
+
+
+<style>
+.wrapper {
+    padding: 41px 0px;
+    overflow-x: hidden;
+    background: #F5F5F5;
+}
+.single-item-content img {
+     border-radius: 1.375rem;
+    width:100%;
+}
+
+
+.single-item-content {
+    margin-left: 20px;
+}
+
+
+.single-item-content img {
+   
+}
+
+
+
+  @media (max-width:768px){
+
+.wrapper {
+    padding: 40px 0px;
+  
+}
+
+
+    
+    
+  }
+
+
+
+  
+</style>
+
+{% schema %}
+  {
+    "name": "Product imagery Section",
+    "settings": [
+    {
+      "type": "color",
+      "id": "galler_bg_color",
+      "label": "Background Color"
+    }
+     
+  ],
+
+  "blocks": [
+     {
+       "name": "Slide",
+       "type": "slide",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         }
+         
+       ]
+     }
+  ],
+  "presets": [
+    {
+      "name": "Product imagery Section"
+      
+    }
+  ]
+
+    
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
